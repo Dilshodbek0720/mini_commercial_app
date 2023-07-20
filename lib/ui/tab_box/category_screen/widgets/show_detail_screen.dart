@@ -130,7 +130,7 @@ class _ShowDetailScreenState extends State<ShowDetailScreen> {
                                 fontWeight: FontWeight.w600),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 7),
+                            padding: const EdgeInsets.symmetric(horizontal: 7),
                             child: GlobalTextButton(onPressed: () async {
                               Fluttertoast.showToast(
                                 msg: "Muvaffaqqiyatli qo'shildi",

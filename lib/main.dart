@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:third_exam_n8/tab_box_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:third_exam_n8/ui/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Commersial app',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const TabBoxScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (BuildContext context, Widget? child) {
+        return const MaterialApp(
+          title: "Commercial App",
+          debugShowCheckedModeBanner: false,
+          initialRoute: RouteNames.tabBoxScreen,
+          onGenerateRoute: AppRoutes.generateRoute,
+        );
+      },
     );
   }
 }
